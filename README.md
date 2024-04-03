@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-App deployed to url: (https://redziok.github.io/Stackoverflow_API)
+App deployed to url: [Stackoverflow_API](https://redziok.github.io/Stackoverflow_API)
 
 ## Available Scripts
 
