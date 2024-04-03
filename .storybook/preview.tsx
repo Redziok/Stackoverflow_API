@@ -2,8 +2,8 @@ import { ThemeProvider } from '@mui/material';
 import type { Preview } from '@storybook/react';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { TableContextProvider } from '../src/context';
-import theme from '../src/utils/theme';
+import { TableContextProvider } from '../src/contexts/context';
+import theme from '../src/themes/theme';
 
 const queryClient = new QueryClient();
 

@@ -1,5 +1,5 @@
 import TablePagination from '@mui/material/TablePagination/TablePagination';
-import { useTableContext } from '../context';
+import { useTableContext } from '../contexts/context';
 import PaginationButtons from './pagination-buttons';
 
 function TagsActions() {

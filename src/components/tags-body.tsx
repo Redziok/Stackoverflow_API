@@ -1,7 +1,7 @@
 import TableCell from '@mui/material/TableCell/TableCell';
 import TableRow from '@mui/material/TableRow/TableRow';
-import { useTableContext } from '../context';
-import { StyledTableRow } from '../utils/styles';
+import { useTableContext } from '../contexts/context';
+import { StyledTableRow } from '../themes/styles';
 
 export default function TagsBody() {
 	const {

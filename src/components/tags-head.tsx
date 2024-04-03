@@ -1,7 +1,7 @@
 import TableCell from '@mui/material/TableCell/TableCell';
 import TableHead from '@mui/material/TableHead/TableHead';
 import TableRow from '@mui/material/TableRow/TableRow';
-import { useTableContext } from '../context';
+import { useTableContext } from '../contexts/context';
 import { Sort, sortType } from '../utils/models';
 import SortableCell from './sortable-cell';
 
@@ -9,7 +9,6 @@ function TagsHead() {
 	const { sortOptions, setSortOptions } = useTableContext();
 
 	const onSortChange = (key: Sort) => {
-		console.log(key);
 		const isAsc = sortOptions.sort === key && sortOptions.order === 'asc';
 		setSortOptions({ sort: key, order: isAsc ? 'desc' : 'asc' });
 	};

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { SortOptions } from '../components/sortable-cell';
 import { Pagination } from '../hooks/use-pagination';
-import { Sort, TagsResponse } from './models';
+import { Sort, TagsResponse } from '../utils/models';
 
 const api = axios.create({
 	baseURL: 'https://api.stackexchange.com',

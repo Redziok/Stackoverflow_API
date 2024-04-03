@@ -1,14 +1,14 @@
 import { AxiosError } from 'axios';
 import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from 'react';
 import { UseQueryResult, useQuery } from 'react-query';
-import { SortOptions } from './components/sortable-cell';
+import { fetchTags } from '../api/api';
+import { SortOptions } from '../components/sortable-cell';
 import usePagination, {
 	OnPageChange,
 	OnRowsPerPageChange,
 	Pagination,
-} from './hooks/use-pagination';
-import { fetchTags } from './utils/api';
-import { ErrorResponse, Sort, TagsResponse } from './utils/models';
+} from '../hooks/use-pagination';
+import { ErrorResponse, Sort, TagsResponse } from '../utils/models';
 
 interface TableContextState {
 	pagination: Pagination;

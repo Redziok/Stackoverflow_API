@@ -1,12 +1,13 @@
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import ReactDOM from 'react-dom/client';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 import App from './App';
-import { TableContextProvider } from './context';
+import queryClient from './api/queryClient';
+import { TableContextProvider } from './contexts/context';
 import reportWebVitals from './reportWebVitals';
-import theme from './utils/theme';
+import './styles/index.css';
+import theme from './themes/theme';
 
-const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(

@@ -1,5 +1,5 @@
 import { UseQueryResult } from 'react-query/types/react/types';
-import { TagsResponse } from './models';
+import { TagsResponse } from '../utils/models';
 
 export const mockFetch: TagsResponse = {
 	items: [

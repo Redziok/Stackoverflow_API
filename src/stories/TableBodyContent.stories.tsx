@@ -1,7 +1,7 @@
 import TableBody from '@mui/material/TableBody/TableBody';
 import type { Meta, StoryObj } from '@storybook/react';
+import { mockQuery, mockQueryError } from '../api/mock';
 import TableBodyContent from '../components/table-body-content';
-import { mockQuery, mockQueryError } from '../utils/mock';
 import { TagsResponse } from '../utils/models';
 
 const meta = {
