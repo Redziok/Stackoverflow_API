@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+App deployed to url: (https://redziok.github.io/Stackoverflow_API)
+
 ## Available Scripts
 
 In the project directory, you can run:

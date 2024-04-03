@@ -12,7 +12,8 @@ const api = axios.create({
 
 export async function fetchTags(
 	{ page, pageSize }: Pagination,
-	{ sort, order }: SortOptions<Sort>
+	{ sort, order }: SortOptions<Sort>,
+	signal?: AbortSignal
 ): Promise<TagsResponse> {
 	const { data } = await api.get<TagsResponse>('tags', {
 		params: {
@@ -21,6 +22,7 @@ export async function fetchTags(
 			sort,
 			order,
 		},
+		signal,
 	});
 	return data;
 }

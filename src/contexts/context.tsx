@@ -30,7 +30,7 @@ export function TableContextProvider({ children }: { children: ReactNode }) {
 
 	const tagsQuery = useQuery<TagsResponse, AxiosError<ErrorResponse>>({
 		queryKey: ['tags', pagination, sortOptions],
-		queryFn: () => fetchTags(pagination, sortOptions),
+		queryFn: ({ signal }) => fetchTags(pagination, sortOptions, signal),
 		keepPreviousData: true,
 	});
 
