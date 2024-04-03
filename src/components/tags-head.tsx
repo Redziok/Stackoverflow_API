@@ -1,54 +1,38 @@
-import Box from '@mui/material/Box/Box';
 import TableCell from '@mui/material/TableCell/TableCell';
 import TableHead from '@mui/material/TableHead/TableHead';
 import TableRow from '@mui/material/TableRow/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel/TableSortLabel';
-import { visuallyHidden } from '@mui/utils';
 import { useTableContext } from '../context';
-import { Sort } from '../utils/models';
+import { Sort, sortType } from '../utils/models';
+import SortableCell from './sortable-cell';
 
 function TagsHead() {
 	const { sortOptions, setSortOptions } = useTableContext();
 
-	const handleSort = (key: Sort) => {
+	const onSortChange = (key: Sort) => {
+		console.log(key);
 		const isAsc = sortOptions.sort === key && sortOptions.order === 'asc';
 		setSortOptions({ sort: key, order: isAsc ? 'desc' : 'asc' });
 	};
 
-	const isDescending = sortOptions.order === 'desc';
-	const isSortName = sortOptions.sort === 'name';
-
 	return (
 		<TableHead>
-			<TableRow>
-				<TableCell>
-					<TableSortLabel
-						active={isSortName}
-						direction={isSortName ? sortOptions.order : 'asc'}
-						onClick={() => handleSort('name')}
-					>
-						<b>Tag Name</b>
-						{isSortName && (
-							<Box component='span' sx={visuallyHidden}>
-								{isDescending ? 'sorted descending' : 'sorted ascending'}
-							</Box>
-						)}
-					</TableSortLabel>
+			<TableRow sx={{ backgroundColor: '#bbb' }}>
+				<TableCell component='th' scope='col'>
+					<SortableCell<Sort>
+						sortBy={sortType.Name}
+						label='Tag Name'
+						sortOptions={sortOptions}
+						onSortChange={onSortChange}
+					/>
 				</TableCell>
 
-				<TableCell align='right'>
-					<TableSortLabel
-						active={!isSortName}
-						direction={!isSortName ? sortOptions.order : 'asc'}
-						onClick={() => handleSort('popular')}
-					>
-						<b>Post Count</b>
-						{!isSortName && (
-							<Box component='span' sx={visuallyHidden}>
-								{isDescending ? 'sorted descending' : 'sorted ascending'}
-							</Box>
-						)}
-					</TableSortLabel>
+				<TableCell component='th' scope='col' align='right'>
+					<SortableCell<Sort>
+						sortBy={sortType.Count}
+						label='Post Count'
+						sortOptions={sortOptions}
+						onSortChange={onSortChange}
+					/>
 				</TableCell>
 			</TableRow>
 		</TableHead>

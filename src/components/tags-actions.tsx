@@ -8,6 +8,7 @@ function TagsActions() {
 	return (
 		<TablePagination
 			component='div'
+			sx={{ backgroundColor: 'rgba(221, 221, 221, 0.5)' }}
 			count={-1}
 			page={pagination.page}
 			rowsPerPage={pagination.pageSize}

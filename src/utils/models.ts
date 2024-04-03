@@ -34,10 +34,9 @@ export interface ErrorResponse {
 	error_name: string;
 }
 
-export type Order = 'desc' | 'asc';
-export type Sort = 'name' | 'popular';
+export const sortType = {
+	Name: 'name',
+	Count: 'popular',
+} as const;
 
-export interface SortOptions {
-	order: Order;
-	sort: Sort;
-}
+export type Sort = (typeof sortType)[keyof typeof sortType];
